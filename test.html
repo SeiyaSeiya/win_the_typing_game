@@ -56,15 +56,17 @@
   output_button.addEventListener('click', () => {
     const input_text = input_area.value;
 
+    let previous_random_value = 0;
+
     for (let i = 0; i < input_text.length; i++) {
+      const random_value = previous_random_value + Math.floor(Math.random() * 31 + 150);
+
       setTimeout(() => {
         output_area.value += input_text[i];
-      }, 150 * i);
+      }, random_value);
+
+      previous_random_value = random_value;
     }
   });
-
-  console.log(test_text.length);
-  console.log(test_text[11] === '\n');
-  console.log(test_text[606]);
 </script>
 </html>
