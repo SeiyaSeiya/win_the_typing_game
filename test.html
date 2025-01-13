@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +7,50 @@
   <style>
     .container {
       width: 100vw;
-      height: 80vh;
+      height: 90vh;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    button {
+      display: block;
+      margin: auto;
+      padding: 5px 30px;
+      background-color: black;
+      color: white;
+      border: black;
+      cursor: pointer;
+    }
+
+    button:hover, button:focus {
+      background-color: rgb(84, 82, 82);
+      color: white;
+    }
+
+    button:active {
+      background-color: black;
+      color: white;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div>
-      <label for="">入力欄</label><br>
-      <textarea id="message" name="message" rows="20" cols="100"></textarea>
+      <label for="output">出力欄</label><br>
+      <textarea id="output" name="output" rows="20" cols="100" placeholder="Read only" readonly></textarea><br>
+      <label for="input">入力欄</label><br>
+      <textarea id="input" name="input" rows="20" cols="100"></textarea>
+      <button>出力</button>
     </div>
   </div>
 </body>
+<script>
+  const input = document.getElementById('input');
+  input.value = 'あいうえお';
+
+  const test_text = 'あいうえお';
+  console.log(test_text.length);
+  console.log(test_text[1]);
+</script>
 </html>
